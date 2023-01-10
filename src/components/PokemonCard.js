@@ -22,7 +22,7 @@ function PokemonCard({ url, name }) {
         <Card>
           <Card.Img src={pokemonData.sprites.front_default} />
           <Card.Header>{name[0].toUpperCase() + name.slice(1)}</Card.Header>
-          <Card.Subtitle>Abilities:</Card.Subtitle>
+          <Card.Subtitle className="subtitle">Abilities:</Card.Subtitle>
           <ul>
             <Card.Text>
               {pokemonData.abilities.map((ability) => {

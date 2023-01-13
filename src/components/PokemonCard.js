@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardImg } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 function PokemonCard({ url, name }) {
   const [pokemonData, setPokemonData] = useState([]);

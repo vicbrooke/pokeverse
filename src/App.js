@@ -1,29 +1,26 @@
 import React, { useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
-import { PokemonCard } from "./components/PokemonCard";
-import { Search } from "./components/Search";
+import Home from "./routes/Home";
+import PokemonDetails from "./routes/PokemonDetails";
 
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
 
   return (
     <div data-testid="app">
-      <Navigation />
-      <Search setPokemonList={setPokemonList} />
-      <Container>
-        <Row>
-          {pokemonList.map((pokemon) => (
-            <Col lg={3} key={pokemon.name} className="my-4">
-              <PokemonCard
-                key={pokemon.name}
-                name={pokemon.name}
-                url={pokemon.url}
-              />
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home pokemonList={pokemonList} setPokemonList={setPokemonList} />
+            }
+          />
+          <Route path="/:name" element={<PokemonDetails />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

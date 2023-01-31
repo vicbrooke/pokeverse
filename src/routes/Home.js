@@ -1,9 +1,8 @@
-
 import { Col, Container, Row } from "react-bootstrap";
 import { PokemonCard } from "../components/PokemonCard";
 import { Search } from "../components/Search";
 
-export default Home = ({ pokemonList, setPokemonList }) => {
+export const Home = ({ pokemonList, setPokemonList }) => {
   return (
     <div data-testid="home">
       <Search setPokemonList={setPokemonList} />
@@ -23,4 +22,3 @@ export default Home = ({ pokemonList, setPokemonList }) => {
     </div>
   );
 };
-

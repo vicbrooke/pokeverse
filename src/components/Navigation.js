@@ -6,7 +6,7 @@ import Image from "react-bootstrap/Image";
 import squirtle from "../../public/squirtle.png";
 import { Link } from "react-router-dom";
 
-function Navigation() {
+export const Navigation = () => {
   return (
     <Navbar sticky="top" bg="dark" variant="dark" className="mb-4">
       <Container>
@@ -18,10 +18,11 @@ function Navigation() {
           <Nav.Link as={Link} to="/">
             All Pokemon
           </Nav.Link>
+          <Nav.Link as={Link} to="/favourites">
+            Favourites
+          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>
   );
-}
-
-export { Navigation };
+};

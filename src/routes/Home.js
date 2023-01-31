@@ -1,3 +1,4 @@
+
 import { Col, Container, Row } from "react-bootstrap";
 import { PokemonCard } from "../components/PokemonCard";
 import { Search } from "../components/Search";
@@ -22,3 +23,4 @@ export default Home = ({ pokemonList, setPokemonList }) => {
     </div>
   );
 };
+

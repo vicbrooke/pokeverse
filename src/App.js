@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/:name" element={<PokemonDetails />} />
         </Routes>
       </BrowserRouter>
+
     </div>
   );
 }

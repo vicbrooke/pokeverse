@@ -1,11 +1,14 @@
-
-import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
+import React, { useContext, useEffect, useState } from "react";
+import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FavouritesContext, FavouritesProvider } from "./FavouritesProvider.js";
 
-function PokemonCard({ url, name }) {
+export const PokemonCard = ({ url, name }) => {
   const [pokemonData, setPokemonData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { favourites, addFavourite, removeFavourite } =
+    useContext(FavouritesContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,10 +40,16 @@ function PokemonCard({ url, name }) {
             </ul>
           </Card>
         </Link>
+        {favourites.includes(pokemonData.name) ? (
+          <Button variant="primary" onClick={() => removeFavourite(name)}>
+            Remove from favourites
+          </Button>
+        ) : (
+          <Button variant="primary" onClick={() => addFavourite(name)}>
+            Add to favourites
+          </Button>
+        )}
       </div>
     )
-
   );
-}
-
-export { PokemonCard };
+};

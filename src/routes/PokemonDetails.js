@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-export default PokemonDetails = () => {
+export const PokemonDetails = () => {
   const [pokemon, setPokemon] = useState(null);
 
   const params = useParams();
